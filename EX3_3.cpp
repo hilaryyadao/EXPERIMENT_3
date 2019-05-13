@@ -1,42 +1,33 @@
-#include <iostream>
-#include <conio.h>
-#include <string.h>
+#include<iostream>
+#include<conio.h>
+#include<string.h>
 using namespace std;
 
-int main() 
+int main ()
 {
-	int size, y;
-	char elmnt[100];
+
+	int size;
+	char in[100], out[100];
 	
-	cout << "Array size: ";
-	cin >> size;
+	cout << "Enter any combination of characters: ";
+	cin >> in;
 	
-	cout << "Enter array elements: ";
+	size = strlen(in);
 	
-	for (int i = 0; i < size; i++)
-	{
-		cin >> elmnt[i];
-	}
-	
-	cout << "\nThe array after sorting is: ";
-	for (int i = 0; i < size; i++)
-	{
-		for (int x = 0; x < size; x++)
-		{
-			if (elmnt[i] < elmnt[x])
-			{
-				y = elmnt[i];
-				elmnt[i] = elmnt[x];
-				elmnt[x] = y;
-			}
-		}
-	}
-	
-	for (int i = 0; i < size; i++)
-	{
-		cout << elmnt[i] << " ";
-	}
-	
+	for (int i = 0, j = size ; i <= size ; i++, j--)
+    	{
+        	 out[j] = in[i];
+    	}
+    	
+    cout << "\n" << endl;
+    	
+    for (int i=0 ; i<= size ; i++)
+    {
+        cout << out[i] << ' ';
+    }
+    
+    cout << "\n\nThe size of array is: " << size;
+    
 	getch();
-	return 0;
+	return 0;	
 }
